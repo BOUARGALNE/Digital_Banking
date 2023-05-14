@@ -1,5 +1,7 @@
 package ma.bouargalne.digitalbanking.web;
 
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import ma.bouargalne.digitalbanking.dtos.*;
 import ma.bouargalne.digitalbanking.exceptions.BalanceNotSufficientException;
 import ma.bouargalne.digitalbanking.exceptions.BankAccountNotFoundException;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@Slf4j
 @CrossOrigin("*")
 public class BankAccountRestAPI {
     private BankAccountService bankAccountService;
