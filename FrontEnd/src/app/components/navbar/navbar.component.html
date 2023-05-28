@@ -1,0 +1,45 @@
+<nav *ngIf="roles!=null" class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid bg-info bg-opacity-50">
+    <a class="navbar-brand" href="#">Digital Banking</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item" *ngIf="roles!=null && roles.includes('ADMIN')">
+          <a class="nav-link" routerLink="/customers">All Customers</a>
+        </li>
+
+        <li class="nav-item" *ngIf="roles!=null && roles.includes('ADMIN')">
+          <a class="nav-link" routerLink="/accounts">Manage Accounts</a>
+        </li>
+
+        <li class="nav-item" *ngIf="roles!=null && roles.includes('ADMIN')">
+          <a class="nav-link" routerLink="/add-customer">Add Customer</a>
+        </li>
+
+
+        <li class="nav-item" *ngIf="roles!=null && roles.includes('CUSTOMER')">
+          <a class="nav-link" routerLink="/customer-accounts/{{customerId}}">My Accounts</a>
+        </li>
+
+        <li class="nav-item" *ngIf="roles!=null && roles.includes('CUSTOMER')">
+          <a class="nav-link" routerLink="/update-customer/{{customerId}}">Edit profile</a>
+        </li>
+
+      </ul>
+        <button class="btn btn-danger" (click)="logout()">Logout</button>
+    </div>
+  </div>
+</nav>
+
+<div *ngIf="roles!=null" style="text-align: center">
+  <div class="d-flex align-items-center">
+    <br>
+    <img src="assets/logo.png" class="mr-2">
+    <p>Bank of the future</p>
+    <br>
+  </div>
+
+</div>

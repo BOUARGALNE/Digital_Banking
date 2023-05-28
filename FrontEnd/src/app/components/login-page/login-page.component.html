@@ -1,0 +1,30 @@
+<br><br>
+<div style="text-align: center">
+
+  <div class="d-flex align-items-center">
+    <br>
+    <img src="assets/logo.png" class="mr-2">
+    <p>Bank of the future</p>
+    <br>
+  </div>
+  <br>
+  <div style="text-align: center" class="card col-md-4 offset-4 mt-4">
+    <div class="card-header bg-info"> Log In</div>
+    <div style="text-align: center" class="card-body">
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class="mb-3">
+          <div class="mb-3">
+            <label class="form-label">Username :</label>
+            <input type="text" formControlName="username" class="form-control">
+          </div>
+          <label class="form-label">Password :</label>
+          <input type="password" formControlName="password" class="form-control">
+          <button type="submit" [disabled]="!loginForm.valid" class="btn btn-outline-info mt-3">Log In</button>
+          <div class="mb-3">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,67 @@
+<div class="container mt-2">
+  <ng-container *ngIf="customers |async as listCustomers; else failureOrLading">
+    <div style="text-align: center" class="card" *ngIf="customers">
+      <div class="card-header bg-info">
+        Manage Customers
+      </div>
+      <div style="text-align: center" class="card-body">
+        <form [formGroup]="searchFormGroup" (ngSubmit)="searchCustomers()">
+          <div class="input-group">
+            <label class="input-group-text">Keyword : </label>
+            <input type="text" formControlName="keyword" class="form-control">
+            <button class="btn btn-outline-info">Search</button>
+          </div>
+
+        </form>
+        <table class="table">
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Actions</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let c of listCustomers.customerDTO">
+            <td>{{c.id}}</td>
+            <td>{{c.name}}</td>
+            <td>{{c.email}}</td>
+            <td>
+              <button (click)="handleDeleteButton(c)" style="margin-right: 8px" class="btn btn-outline-danger">
+                <i class="bi bi-trash-fill"></i>
+              </button>
+              <button (click)="goToUpdateCustomer(c)" class="btn btn-outline-warning" style="margin-right: 8px">
+                Update
+              </button>
+              <button (click)="handleCustomerAccounts(c)" class="btn btn-outline-success" style="margin-right: 8px">
+                View Accounts
+              </button>
+            </td>
+
+          </tr>
+          </tbody>
+        </table>
+        <ul class="nav nav-pills">
+          <li *ngFor="let item of [].constructor(listCustomers.totalpage);let page=index">
+            <a [ngClass]="page==currentPage?'btn-info':'btn-outline-info'" (click)="gotoPage(page)"
+               class="btn ms-1 ">{{page}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+  </ng-container>
+
+  <ng-template #failureOrLading class="text-danger">
+    <ng-container *ngIf="errorMessage; else loading">
+      <div class="text-danger">
+        {{errorMessage}}
+      </div>
+    </ng-container>
+    <ng-template #loading>
+      Loading, please wait ...
+    </ng-template>
+  </ng-template>
+</div>

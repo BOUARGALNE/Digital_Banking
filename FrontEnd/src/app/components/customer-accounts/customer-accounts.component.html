@@ -1,0 +1,42 @@
+<div class="container">
+  <br><br>
+  <ng-container *ngIf="true; else failureOrLading">
+    <div style="text-align: center" class="card">
+      <div class="card-header">Welcome to your Account</div>
+      <div class="card-body">
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Account Id</th>
+            <th>Balance</th>
+            <th>Type</th>
+            <th>Actions</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let account  of accounts ">
+            <td>{{account.id}}</td>
+            <td>{{account.balance}} DHs</td>
+            <td>{{account.type.replace('Account',' Account')}}</td>
+            <td>
+              <button (click)="viewOperations(account)" class="btn btn-outline-info">
+                View All Operations
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #failureOrLading>
+    <ng-container *ngIf="errorMessage; else loading">
+      <div class="text-danger">
+        {{errorMessage}}
+      </div>
+    </ng-container>
+    <ng-template #loading>
+      Loading .....
+    </ng-template>
+  </ng-template>
+</div>
