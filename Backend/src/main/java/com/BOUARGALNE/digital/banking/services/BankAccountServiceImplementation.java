@@ -10,8 +10,6 @@ import com.BOUARGALNE.digital.banking.repositories.CustomerRepository;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import com.lafryhi.yassine.digital.banking.dtos.*;
-import com.lafryhi.yassine.digital.banking.entities.*;
 import com.BOUARGALNE.digital.banking.enums.OperationType;
 import com.BOUARGALNE.digital.banking.exceptions.BankAccountNotFound;
 import com.BOUARGALNE.digital.banking.mappers.BankAccountMapperImplementation;

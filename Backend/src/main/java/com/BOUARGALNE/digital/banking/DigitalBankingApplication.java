@@ -4,7 +4,6 @@ package com.BOUARGALNE.digital.banking;
 import com.BOUARGALNE.digital.banking.dtos.BankAccountDTO;
 import com.BOUARGALNE.digital.banking.dtos.CustomerDTO;
 import com.BOUARGALNE.digital.banking.dtos.SavingBankAccountDTO;
-import com.lafryhi.yassine.digital.banking.dtos.*;
 import com.BOUARGALNE.digital.banking.entities.AccountOperation;
 import com.BOUARGALNE.digital.banking.entities.CurrentAccount;
 import com.BOUARGALNE.digital.banking.entities.SavingAccount;

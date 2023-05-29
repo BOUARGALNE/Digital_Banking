@@ -4,8 +4,6 @@ import com.BOUARGALNE.digital.banking.dtos.*;
 import com.BOUARGALNE.digital.banking.entities.Customer;
 import com.BOUARGALNE.digital.banking.exceptions.BalanceNotSufficientException;
 import com.BOUARGALNE.digital.banking.exceptions.CustomerNotFoundException;
-import com.lafryhi.yassine.digital.banking.dtos.*;
-import com.lafryhi.yassine.digital.banking.entities.*;
 import com.BOUARGALNE.digital.banking.exceptions.BankAccountNotFound;
 import org.springframework.stereotype.Service;
 

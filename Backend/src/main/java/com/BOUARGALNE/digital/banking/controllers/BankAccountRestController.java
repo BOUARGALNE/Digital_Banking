@@ -3,7 +3,6 @@ package com.BOUARGALNE.digital.banking.controllers;
 
 import com.BOUARGALNE.digital.banking.dtos.*;
 import com.BOUARGALNE.digital.banking.exceptions.BalanceNotSufficientException;
-import com.lafryhi.yassine.digital.banking.dtos.*;
 import com.BOUARGALNE.digital.banking.exceptions.BankAccountNotFound;
 import com.BOUARGALNE.digital.banking.services.BankAccountServiceImplementation;
 import org.springframework.beans.factory.annotation.Autowired;
